@@ -1,12 +1,10 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Kaylin Kerrick
+- **Dot Number**: Kerrick.11
+- **Due Date**: 9/19 @ 1:50 pm
 
 ## Assignment Overview
-
-<!-- TODO: read the assignment overview then delete this comment -->
 
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
@@ -29,8 +27,6 @@ implement.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
-
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -52,8 +48,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
-
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
 what we're hoping you will learn through this particular aspect of the portfolio
@@ -66,8 +60,6 @@ project. Specifically, students should be able to:
    discipline
 
 ## Assignment Rubric: 10 Points
-
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -106,15 +98,9 @@ Below is further rationale/explanation for the rubric items above:
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
+I have always been interested in combining creativity with technology. Growing up, I dreamed of a career in the arts, especially theater, but my interests for math and science led me to pursue computer science instead. Now that I plan to have a career in tech, I want to work in a space where I can use both creative and technical elements. I am considering adding a minor in either animation or technical theater, and this component project can be a first step toward combining my artistic and technical interests.
 
 ## Assignment
-
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
@@ -122,7 +108,6 @@ that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
 
-<!-- TODO: browse the list of possible projects then delete this comment -->
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -131,8 +116,6 @@ etc. Make of this whatever seems interesting to you, and keep in mind that
 you're just brainstorming right now. You do not have to commit to anything.
 
 ### Example Component
-
-<!-- TODO: review this example component then delete this comment -->
 
 To help you brainstorm a few components, we've provided an example below of a
 component you already know well: NaturalNumber. We highly recommend that you
@@ -200,68 +183,85 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: Animation Frame
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - A component that models a frame of animation. Deals with each frame's image, duration, and position in the overall sequence. The kernel methods will allow the user to change characteristics of the image/duration/position while the secondary methods deal with playback and comparing frames.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void updateImage(String newImage): updates the image shown for the frame
+    - void setDuration(int time): sets the time the frame will be played
+    - int getFrameNumber(): reports the frame's index number in the sequence
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - void play(): plays the frame for the set duration
+    - boolean isLastFrame(int frame): reports if the frame is the last in the sequence
+    - void extendDuration(int addTime): adds time to the duration of the frame
+    - void shortenDuration(int reduceTime): removes time from the duration of the frame
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes because we can change the image and duration of the frames
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't know yet
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't know
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, extendDuration and shortenDuration can be implemented with setDuration.
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: Stage Lights
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - This component models a stage light that would be used in a theater. Deals with the lights color, brightness, positioning, and if it's on/off. The kernel methods will deal with changing these properties of the lights and the secondary methods will use these to perform common stage light tasks.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void setColor(String colorIndex): changes the color being projected by the light
+    - void setPosition(String newPosition): sets a new position on stage for the light to point
+    - void setBrightness(int level): adjusts the level of brightness
+    - void toggle(): switches the light on or off
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - void fadeToBlack(): slowly fades brightness to level 0
+    - boolean isOn(): reports if the light is on
+    - void spotlight(): changes light to max brightness on center stage
+    - String getStatus(): reports the current state of the light (color, position, etc.)
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes the properties of the light will be constantly changing.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - No it would just use Strings and primitive types.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't know
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, fadeToBlack can be implemented by calling setBrightness over and over. The spotlight method could be implemented using the setPosition and setBrightness methods.
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: Playable Character
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - This component models a character in a video game. It would specifically deal with the character's health, inventory, and level. The kernel methods controll the player's health, inventory, and level while the secondary methods check the status of those things throughout the game.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void levelUp(): Increases the player's level
+    - void takeDamage(int amount): Reduces the player's health
+    - void heal(int amount): Increases the player's health
+    - void addItem(String item): Adds a specific item to the inventory
+    - void removeItem(String item): Removes a specific item from the inventory
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - boolean isAlive(): Checks if player has health > 0
+    - boolean hasItem(String item): Check if player has item in inventory
+    - void fullHealth(): Brings player back to full health
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, the health, inventory, and level will be changing
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't know
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Could have some sort of max health constant
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, the fullHealth method could be implemented using the heal kernel method. The hasItem method could also use the add or remove item kernel methods to check all inventory slots.
 
 ## Post-Assignment
 
@@ -269,8 +269,6 @@ The following sections detail everything that you should do once you've
 completed the assignment.
 
 ### Changelog
-
-<!-- TODO: create CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -292,9 +290,9 @@ the following form: YYYY.0M.0D.
 
 ### Added
 
-- Designed a <!-- insert name of component 1 here --> component
-- Designed a <!-- insert name of component 2 here --> component
-- Designed a <!-- insert name of component 3 here --> component
+- Designed a Animation Frame component
+- Designed a Stage Light component
+- Designed a Playable Character component
 ```
 
 Here `YYYY.MM.DD` would be the date of your submission, such as 2024.04.21.
@@ -309,7 +307,6 @@ of development.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
 
 If you have completed the assignment using this template, we recommend that
 you convert it to a PDF before submission. If you're not sure how, check out
@@ -319,7 +316,6 @@ all your work is there before submitting. For future assignments, you will
 just be submitting a link to a pull request. This will be the only time
 you have to submit any PDFs.
 
-<!-- TODO: upload a PDF of this document and the CHANGELOG to Carmen then delete this comment -->
 
 ### Peer Review
 
