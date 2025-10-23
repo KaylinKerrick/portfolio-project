@@ -319,7 +319,6 @@ you have to submit any PDFs.
 
 ### Peer Review
 
-<!-- TODO: review the peer review guidelines then delete this comment -->
 
 Following the completion of this assignment, you will be assigned three
 students' component brainstorming assignments for review. Your job during the
