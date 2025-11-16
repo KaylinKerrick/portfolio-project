@@ -17,6 +17,13 @@ public interface StageLightKernel extends Standard<StageLight> {
     void setColor(String colorIndex);
 
     /**
+     * Gets the current color of the light.
+     *
+     * @return current color name or index
+     */
+    String getColor();
+
+    /**
      * Adjusts the light's level of brightness.
      *
      * @param level
@@ -26,6 +33,13 @@ public interface StageLightKernel extends Standard<StageLight> {
      * @ensures this.brightness = level
      */
     void setBrightness(int level);
+
+    /**
+     * Gets the current brightness level.
+     *
+     * @return current brightness level
+     */
+    int getBrightness();
 
     /**
      * Changes the position where the light is pointing on stage.
@@ -38,11 +52,25 @@ public interface StageLightKernel extends Standard<StageLight> {
     void setPosition(String newPosition);
 
     /**
+     * Gets the current position of the light.
+     *
+     * @return current position (left, right, center)
+     */
+    String getPosition();
+
+    /**
      * Switches the light on or off.
      *
      * @updates this
      * @ensures isOn(this) = not isOn(#this)
      */
     void toggle();
+
+    /**
+     * Reports whether the light is on.
+     *
+     * @return true if the light is on, false otherwise
+     */
+    boolean isOn();
 
 }
