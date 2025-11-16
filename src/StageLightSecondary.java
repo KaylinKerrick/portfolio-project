@@ -4,11 +4,7 @@
  *
  * @author Kaylin Kerrick
  */
-public class StageLightSecondary {
-
-    /*
-     * Fade to Black lowers the stage light level slowly until zero (black).
-     */
+public abstract class StageLightSecondary implements StageLight {
     @Override
     public void fadeToBlack() {
         //Keep decrementing the brightness until it hits zero
@@ -26,10 +22,6 @@ public class StageLightSecondary {
         }
     }
 
-    /*
-     * Spotlight means the light is center stage, full brightness, white, and
-     * on.
-     */
     @Override
     public void spotlight() {
         //Spotlight is center stage
@@ -47,10 +39,6 @@ public class StageLightSecondary {
         }
     }
 
-    /*
-     * The status of the StageLight details the light's color, position,
-     * brightness, and toggle (on/off).
-     */
     @Override
     public String getStatus() {
         //Want to return a formatted string of the light's properties
@@ -58,22 +46,32 @@ public class StageLightSecondary {
         status += ", position=" + this.getPosition();
         status += ", brightness=" + this.getBrightness();
         status += ", isOn=" + this.isOn() + "]";
+
+        return status;
     }
 
-    /*
-     * Common Object Method: equals.
-     */
     @Override
     public boolean equals(Object obj) {
-        boolean equal = (obj instanceof StageLight)
-                && this.getStatus().equals(((StageLight) obj).getStatus());
+        if (obj == this) {
+            return true;
+        }
 
-        return equal;
+        if (obj == null) {
+            return false;
+        }
+
+        if (!(obj instanceof StageLight)) {
+            return false;
+        }
+
+        StageLight other = (StageLight) obj;
+
+        return this.getColor().equals(other.getColor())
+                && this.getPosition().equals(other.getPosition())
+                && this.getBrightness() == other.getBrightness()
+                && this.isOn() == other.isOn();
     }
 
-    /*
-     * Common Object Method: toString.
-     */
     @Override
     public String toString() {
         return this.getStatus();
