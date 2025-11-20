@@ -1,71 +1,49 @@
 /**
- * The StageLight component's abstract class. Methods are implemented using only
- * Kernel and Standard methods.
+ * Secondary implementation for StageLight.
  *
  * @author Kaylin Kerrick
+ *
+ *         Implements all secondary methods using the kernel methods.
  */
 public abstract class StageLightSecondary implements StageLight {
+
+    protected StageLightSecondary() {
+        //This is the default constructor
+    }
+
+    //Implement the secondary methods
     @Override
     public void fadeToBlack() {
-        //Keep decrementing the brightness until it hits zero
         while (this.getBrightness() > 0) {
-            //Decrement by 5 light levels each loop to slowly fade to black
-            int fadedLevel = this.getBrightness() - 5;
-
-            //Light level can't go below zero
-            if (fadedLevel < 0) {
-                fadedLevel = 0;
-            }
-
-            //Set the brightness to the new faded light level
-            this.setBrightness(fadedLevel);
+            this.setBrightness(this.getBrightness() - 1);
         }
+
+        this.turnOff();
     }
 
     @Override
     public void spotlight() {
-        //Spotlight is center stage
-        this.setPosition("center");
-
-        //Spotlight has full brightness (100)
+        this.turnOn();
         this.setBrightness(100);
-
-        //Spotlight is the color white
-        this.setColor("white");
-
-        //Spotlight must be on
-        if (!this.isOn()) {
-            this.toggle();
-        }
+        this.setPosition("center");
     }
 
     @Override
     public String getStatus() {
-        //Want to return a formatted string of the light's properties
-        String status = "StageLight[color=" + this.getColor();
-        status += ", position=" + this.getPosition();
-        status += ", brightness=" + this.getBrightness();
-        status += ", isOn=" + this.isOn() + "]";
-
-        return status;
+        return "Color: " + this.getColor() + ", Position: " + this.getPosition()
+                + ", Brightness: " + this.getBrightness() + ", Power: "
+                + (this.isOn() ? "On" : "Off");
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == this) {
+        if (this == obj) {
             return true;
         }
-
-        if (obj == null) {
+        if (obj == null || !(obj instanceof StageLight)) {
             return false;
         }
-
-        if (!(obj instanceof StageLight)) {
-            return false;
-        }
-
         StageLight other = (StageLight) obj;
-
         return this.getColor().equals(other.getColor())
                 && this.getPosition().equals(other.getPosition())
                 && this.getBrightness() == other.getBrightness()
@@ -75,5 +53,14 @@ public abstract class StageLightSecondary implements StageLight {
     @Override
     public String toString() {
         return this.getStatus();
+    }
+
+    @Override
+    public int hashCode() {
+        int result = this.getColor().hashCode();
+        result = 31 * result + this.getPosition().hashCode();
+        result = 31 * result + this.getBrightness();
+        result = 31 * result + (this.isOn() ? 1 : 0);
+        return result;
     }
 }
