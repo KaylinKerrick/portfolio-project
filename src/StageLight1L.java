@@ -3,24 +3,48 @@
  *
  * @author Kaylin Kerrick
  *
- *         Convention: - color != null - position != null - 0 <= brightness <=
- *         100
- *
- *         Correspondence: - this.color is the abstract light color -
- *         this.position is the abstract light position - this.brightness is the
- *         abstract light level - this.powerOn is the abstract power state
  */
-
 public class StageLight1L extends StageLightSecondary {
-
     //The Representation
+
+    /**
+     * Current color of the light.
+     *
+     * @convention color != null
+     * @correspondence this.color = this.color
+     */
     private String color;
+
+    /**
+     * Current position of the light on stage.
+     *
+     * @convention position != null
+     * @correspondence this.position = this.position
+     */
     private String position;
+
+    /**
+     * Current brightness level of the light.
+     *
+     * @convention 0 <= brightness <= 100
+     * @correspondence this.brightness = this.brightness
+     */
     private int brightness;
+
+    /**
+     * Whether the light is turned on/off.
+     *
+     * @convention powerOn is either true (light on) or false (light off)
+     * @correspondence this.isOn = this.powerOn
+     */
     private boolean powerOn;
 
-    // Default constructor initializes to off at center stage.
+    // Default constructor
     public StageLight1L() {
+        this.createNewRep();
+    }
+
+    private void createNewRep() {
         this.color = "white";
         this.position = "center";
         this.brightness = 0;
