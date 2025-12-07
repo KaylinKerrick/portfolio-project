@@ -6,15 +6,30 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
-## [2025.11.05]
-
-### Added
-
-- Designed abstract class for the StageLight component
+## [2025.12.07]
 
 ### Updated
 
-- Changed design to include getBrightness(), getPosition(), getColor(), isOn() in StageLightKernel
+- Javadoc notation in StageLight1L.java
+- Added a createNewRep() method
+
+## [2025.11.20]
+
+### Added
+
+- Designed the secondary methods, StageLightSecondary.java
+- Designed the kernel implementation, StageLight1L.java
+- Chose a representation, convention, and correspondence for stage light.
+
+### Updated
+
+- Changed StageLightKernel.java to include missing methods
+
+## [2025.11.16]
+
+### Updated
+
+- Fixed issues with the abstract class after reviewing professor's comments
 
 ## [2025.10.23]
 
