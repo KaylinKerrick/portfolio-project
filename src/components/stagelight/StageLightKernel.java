@@ -1,3 +1,5 @@
+package components.stagelight;
+
 import components.standard.Standard;
 
 /**
