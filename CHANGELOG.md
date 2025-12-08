@@ -8,6 +8,11 @@ the following form: YYYY.0M.0D.
 
 ## [2025.12.07]
 
+### Added
+
+- Designed test suite for StageLight component
+- Designed two different use cases for StageLight component
+
 ### Updated
 
 - Javadoc notation in StageLight1L.java

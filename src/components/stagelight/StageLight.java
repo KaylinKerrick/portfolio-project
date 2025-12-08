@@ -1,3 +1,5 @@
+package components.stagelight;
+
 /**
  * Enhanced interface for the StageLight component.
  *
@@ -29,6 +31,7 @@ public interface StageLight extends StageLightKernel {
      * @return true if light is on, false otherwise
      * @ensures isOn = (this is turned on)
      */
+    @Override
     boolean isOn();
 
     /**

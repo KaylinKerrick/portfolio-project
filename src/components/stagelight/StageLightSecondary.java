@@ -1,3 +1,5 @@
+package components.stagelight;
+
 /**
  * Secondary implementation for StageLight.
  *
